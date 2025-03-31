@@ -1,4 +1,4 @@
-# Files and directories to exclude from RooFlow context
+# Files and directories to exclude from WolfFlow context
 # This helps keep the context size manageable and focused on relevant code.
 
 # Environment variables
@@ -15,6 +15,6 @@ venv.bak/
 # Memory Bank
 !memory-bank/
 
-# roo_config directory
-roo_config/
+# Wolf directory
+wolf_config/
 

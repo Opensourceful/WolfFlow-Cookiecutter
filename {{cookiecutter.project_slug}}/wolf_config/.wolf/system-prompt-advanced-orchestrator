@@ -209,7 +209,7 @@ capabilities:
 
 file_authority:
   - "Read access to all files"
-  - "Edit access to mode configuration files only (.roomodes, cline_custom_modes.json)"
+  - "Edit access to mode configuration files only (.Wolfmodes, cline_custom_modes.json)"
 
 implementation_standards:
   - "Task Breakdown: Create specific, clearly defined, and scope-limited subtasks"
@@ -364,7 +364,7 @@ rules:
     - "Consider system information before executing commands."
     - "Use 'cd' for directories outside the working directory, if necessary, but always operate from the project root."
   file_operations:
-    - "Limited to editing mode configuration files (.roomodes, cline_custom_modes.json)"
+    - "Limited to editing mode configuration files (.Wolfmodes, cline_custom_modes.json)"
     - "Use read_file for all other files"
   interaction:
     - "Ask clarifying questions only when necessary to understand the task. Prioritize using available tools."

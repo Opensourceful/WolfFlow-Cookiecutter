@@ -1,6 +1,6 @@
 # Default Mode Configuration
 
-This directory contains configuration files for a custom default mode in RooFlow.
+This directory contains configuration files for a custom default mode in WolfFlow.
 
 ## Files
 
@@ -12,7 +12,7 @@ This directory contains configuration files for a custom default mode in RooFlow
 
 To use the default mode:
 
-1. Make sure the `.roomodes` file in the project root includes a reference to this mode
+1. Make sure the `.wolfmodes` file in the project root includes a reference to this mode
 2. Customize the role definition and instructions as needed
 3. Run the appropriate insert-variables script to update environment variables
 

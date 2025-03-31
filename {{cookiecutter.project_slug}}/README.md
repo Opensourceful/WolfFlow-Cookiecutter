@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project uses RooFlow for persistent project context and optimized mode interactions. RooFlow helps maintain context across AI assistant sessions, making development more efficient and consistent.
+This project uses WolfFlow for persistent project context and optimized mode interactions. WolfFlow helps maintain context across AI assistant sessions, making development more efficient and consistent.
 
 ## Getting Started
 
@@ -58,9 +58,9 @@ This will create a virtual environment and install the required dependencies.
 
 ```
 {{ cookiecutter.project_slug }}/
-├── .roo/                  # System prompt files for different modes
-├── .rooignore             # Files to ignore in context
-├── .roomodes              # Mode configuration
+├── .Wolf/                  # System prompt files for different modes
+├── .Wolfignore             # Files to ignore in context
+├── .Wolfmodes              # Mode configuration
 ├── config/                # Configuration files
 │   ├── insert-variables.cmd  # Windows script to set environment variables
 │   ├── insert-variables.sh   # Unix script to set environment variables

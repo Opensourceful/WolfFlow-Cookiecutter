@@ -22,7 +22,7 @@ def create_uv_config():
     
     # Create uv.toml configuration file
     with open('.uv/uv.toml', 'w') as f:
-        f.write("""# UVX Configuration for RooFlow project
+        f.write("""# UVX Configuration for wolfFlow project
 [tool]
 # Use isolated environments by default
 isolated = true
@@ -69,30 +69,30 @@ echo "UVX environment setup complete!"
 def main():
     print("Running post-generation hook...")
     
-    # Create .roo directory if it doesn't exist
-    if not os.path.exists('.roo'):
-        os.makedirs('.roo')
-        print("Created .roo directory")
+    # Create .wolf directory if it doesn't exist
+    if not os.path.exists('.wolf'):
+        os.makedirs('.wolf')
+        print("Created .wolf directory")
 
-    # Move .rooignore and .roomodes to project root
-    if os.path.exists('roo_config/.rooignore'):
-        shutil.move('roo_config/.rooignore', '.rooignore')
-        print("Moved roo_config/.rooignore to .rooignore")
+    # Move .wolfignore and .wolfmodes to project wolft
+    if os.path.exists('wolf_config/.wolfignore'):
+        shutil.move('wolf_config/.wolfignore', '.wolfignore')
+        print("Moved wolf_config/.wolfignore to .wolfignore")
     
-    if os.path.exists('roo_config/.roomodes'):
-        shutil.move('roo_config/.roomodes', '.roomodes')
-        print("Moved roo_config/.roomodes to .roomodes")
+    if os.path.exists('wolf_config/.wolfmodes'):
+        shutil.move('wolf_config/.wolfmodes', '.wolfmodes')
+        print("Moved wolf_config/.wolfmodes to .wolfmodes")
 
     # Run the appropriate insert-variables script
     if platform.system() == 'Windows':
-        if os.path.exists('roo_config/insert-variables.cmd'):
+        if os.path.exists('wolf_config/insert-variables.cmd'):
             print("Running insert-variables.cmd...")
-            subprocess.call(['cmd', '/c', 'roo_config/insert-variables.cmd'])
+            subprocess.call(['cmd', '/c', 'wolf_config/insert-variables.cmd'])
     else:
-        if os.path.exists('roo_config/insert-variables.sh'):
+        if os.path.exists('wolf_config/insert-variables.sh'):
             print("Running insert-variables.sh...")
-            os.chmod('roo_config/insert-variables.sh', 0o755)
-            subprocess.call(['./roo_config/insert-variables.sh'])
+            os.chmod('wolf_config/insert-variables.sh', 0o755)
+            subprocess.call(['./wolf_config/insert-variables.sh'])
 
     # Create memory-bank directory and templates if selected
     include_memory_bank = '{{ cookiecutter.include_memory_bank_templates }}' == 'yes'
@@ -104,7 +104,7 @@ def main():
         with open('memory-bank/README.md', 'w') as f:
             f.write("""# Memory Bank
 
-This directory contains memory bank templates for your RooFlow project.
+This directory contains memory bank templates for your wolfFlow project.
 
 ## What is Memory Bank?
 
@@ -121,9 +121,9 @@ to persist across sessions. These files will be loaded into the AI's context whe
     # Remove default-mode if not selected
     include_default_mode = '{{ cookiecutter.include_default_mode }}' == 'yes'
     if not include_default_mode:
-        if os.path.exists('roo_config/default-mode'):
-            shutil.rmtree('roo_config/default-mode', ignore_errors=True)
-            print("Removed roo_config/default-mode directory")
+        if os.path.exists('wolf_config/default-mode'):
+            shutil.rmtree('wolf_config/default-mode', ignore_errors=True)
+            print("Removed wolf_config/default-mode directory")
     
     # Handle UVX integration if selected
     use_uv = '{{ cookiecutter.use_uv }}' == 'yes'

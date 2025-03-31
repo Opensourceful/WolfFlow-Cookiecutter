@@ -47,12 +47,12 @@ If you find a bug or have a suggestion for improvement:
 - Include comments where necessary
 - Write tests for new features
 
-## RooFlow Specific Guidelines
+## WolfFlow Specific Guidelines
 
-When working with RooFlow:
+When working with WolfFlow:
 
-1. Keep system prompts in the `.roo` directory
-2. Update `.rooignore` when adding files that should be excluded from context
+1. Keep system prompts in the `.Wolf` directory
+2. Update `.Wolfignore` when adding files that should be excluded from context
 3. Document any changes to mode configurations
 
 Thank you for your contributions!

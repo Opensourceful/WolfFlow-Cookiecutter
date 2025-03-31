@@ -1,0 +1,17 @@
+# wolfFlow Mode Configuration
+# This file defines the available modes and their system prompt files
+
+# Format:
+# mode_slug:path/to/system-prompt-file
+
+# Core modes
+code:.wolf/system-prompt-code
+architect:.wolf/system-prompt-architect
+ask:.wolf/system-prompt-ask
+debug:.wolf/system-prompt-debug
+test:.wolf/system-prompt-test
+
+# Add custom modes below
+# example:.wolf/system-prompt-example
+advanced-orchestrator:.wolf/system-prompt-advanced-orchestrator
+vibemode:.wolf/system-prompt-vibemode

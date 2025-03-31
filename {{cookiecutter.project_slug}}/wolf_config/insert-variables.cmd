@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-echo RooFlow Environment Setup Script (Windows)
+echo wolfFlow Environment Setup Script (Windows)
 echo =========================================
 echo.
 echo This script will update system prompt files with your local environment details.
@@ -20,19 +20,19 @@ echo - Home Directory: %HOME_DIR%
 echo - Workspace Directory: %WORKSPACE_DIR%
 echo.
 
-REM Create .roo directory if it doesn't exist
-if not exist ".roo" (
-    mkdir .roo
-    echo Created .roo directory
+REM Create .wolf directory if it doesn't exist
+if not exist ".wolf" (
+    mkdir .wolf
+    echo Created .wolf directory
 )
 
 REM Process system prompt files
 echo Processing system prompt files...
 
-REM Check if roo_config\.roo directory exists with system prompt files
-if exist "roo_config\.roo\*" (
-    echo Found system prompt files in roo_config/.roo
-    for %%f in (roo_config\.roo\*) do (
+REM Check if wolf_config\.wolf directory exists with system prompt files
+if exist "wolf_config\.wolf\*" (
+    echo Found system prompt files in wolf_config/.wolf
+    for %%f in (wolf_config\.wolf\*) do (
         echo Processing %%f
         
         REM Read file content
@@ -51,12 +51,12 @@ if exist "roo_config\.roo\*" (
         REM Get filename without path
         for %%i in (%%f) do set "filename=%%~nxi"
         
-        REM Write updated content to .roo directory
-        echo !content! > .roo\!filename!
-        echo Updated .roo\!filename!
+        REM Write updated content to .wolf directory
+        echo !content! > .wolf\!filename!
+        echo Updated .wolf\!filename!
     )
 ) else (
-    echo No system prompt files found in roo_config/.roo
+    echo No system prompt files found in wolf_config/.wolf
     
     REM Check if default-system-prompt.md exists
     if exist "default-system-prompt.md" (
@@ -77,8 +77,8 @@ if exist "roo_config\.roo\*" (
         
         REM Create system prompt files for each mode
         for %%m in (code architect ask debug test) do (
-            echo !content! > .roo\system-prompt-%%m
-            echo Created .roo\system-prompt-%%m
+            echo !content! > .wolf\system-prompt-%%m
+            echo Created .wolf\system-prompt-%%m
         )
     ) else (
         echo No default system prompt found. Please create system prompt files manually.
@@ -87,7 +87,7 @@ if exist "roo_config\.roo\*" (
 
 echo.
 echo Setup complete!
-echo You can now use RooFlow with your local environment settings.
+echo You can now use wolfFlow with your local environment settings.
 echo.
 
 endlocal

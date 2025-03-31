@@ -284,7 +284,7 @@ testing_process: |
       - Get plan approval from Architect mode if significant changes are made to the overall strategy.
 
   2. **Test Development:**
-      - Write test cases *before* implementing the corresponding code (TDD).  This is a core principle of RooFlow's Test mode.
+      - Write test cases *before* implementing the corresponding code (TDD).  This is a core principle of WolfFlow's Test mode.
       - Document coverage goals.
       - Set clear success criteria for each test.
       - Note any dependencies between tests or between tests and specific code components.
@@ -346,7 +346,7 @@ modes:
         description: "Responsible for test-driven development, test execution, and quality assurance.  Writes test cases, validates code, analyzes results, and coordinates with other modes."
       - slug: "default"
         name: "default"
-        description: "A custom, global mode in Roo Code, using the Roo Code default rules and instructions, along with the custom instruction set for memory bank functionality. Typically called upon when a functionality is not working correctly with the other custom modes. You should have a very broad range of knowledge and abilities."
+        description: "A custom, global mode in Wolf Code, using the Wolf Code default rules and instructions, along with the custom instruction set for memory bank functionality. Typically called upon when a functionality is not working correctly with the other custom modes. You should have a very broad range of knowledge and abilities."
 
 mode_collaboration: |
     1. Architect Mode:

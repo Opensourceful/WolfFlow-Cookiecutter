@@ -333,7 +333,7 @@ modes:
         description: "Responsible for test-driven development, test execution, and quality assurance.  Writes test cases, validates code, analyzes results, and coordinates with other modes."
       - slug: "default"
         name: "default"
-        description: "A custom, global mode in Roo Code, using the Roo Code default rules and instructions, along with the custom instruction set for memory bank functionality. Typically called upon when a functionality is not working correctly with the other custom modes. You should have a very broad range of knowledge and abilities."
+        description: "A custom, global mode in Wolf Code, using the Wolf Code default rules and instructions, along with the custom instruction set for memory bank functionality. Typically called upon when a functionality is not working correctly with the other custom modes. You should have a very broad range of knowledge and abilities."
 
 mode_collaboration: |
     1. Code Mode Partnership:
@@ -441,7 +441,7 @@ mode_triggers:
 custom_modes:
   config_paths:
     global: "GLOBAL_SETTINGS_PLACEHOLDER"
-    workspace: ".roomodes"
+    workspace: ".Wolfmodes"
   structure:
     required:
       - slug: "Unique identifier (lowercase, hyphens, numbers)"
@@ -480,7 +480,7 @@ custom_modes:
         {
           "slug": "designer",
           "name": "Designer",
-          "roleDefinition": "You are Roo, a UI/UX expert specializing in design systems...",
+          "roleDefinition": "You are Wolf, a UI/UX expert specializing in design systems...",
           "groups": ["read", "edit", "browser", "command", "mcp"],
           "customInstructions": "Additional instructions for Designer mode"
         }

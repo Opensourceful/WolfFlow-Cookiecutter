@@ -1,25 +1,25 @@
-# RooFlow Cookiecutter Template
+# WolfFlow Cookiecutter Template
 
 [![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
 [![Cookiecutter](https://img.shields.io/badge/built%20with-Cookiecutter-ff69b4.svg)](https://github.com/cookiecutter/cookiecutter)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for creating new RooFlow projects. RooFlow helps maintain context across AI assistant sessions, making development more efficient and consistent.
+A [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for creating new WolfFlow projects. WolfFlow helps maintain context across AI assistant sessions, making development more efficient and consistent.
 
-## What is RooFlow?
+## What is WolfFlow?
 
-[RooFlow](https://github.com/GreatScottyMac/RooFlow) is a framework that enhances AI-assisted development by maintaining persistent context across sessions. It allows AI assistants to:
+[WolfFlow] is a framework that enhances AI-assisted development by maintaining persistent context across sessions. It allows AI assistants to:
 
 - Remember previous conversations and decisions
 - Access project-specific knowledge and configurations
 - Adapt to different development modes (coding, architecture planning, debugging, etc.)
 - Provide more consistent and relevant assistance
 
-This template provides everything you need to quickly set up a new project with RooFlow integration.
+This template provides everything you need to quickly set up a new project with WolfFlow integration.
 
 ## Features
 
-- **Configurable project structure** with RooFlow integration
+- **Configurable project structure** with WolfFlow integration
 - **System prompts** for different AI assistant modes (code, architect, ask, debug, test)
 - **Environment variable setup scripts** for Windows and Unix/Mac
 - **Optional default mode configuration** for customized AI assistance
@@ -42,9 +42,9 @@ This template provides everything you need to quickly set up a new project with 
 pip install cookiecutter
 
 # Create a new project from this template
-cookiecutter gh:hheydaroff/rooflow-cookiecutter
+cookiecutter gh:Opensourceful/WolfFlow-Cookiecutter
 # or from local template
-cookiecutter path/to/rooflow-cookiecutter
+cookiecutter path/to/Wolfflow-cookiecutter
 ```
 
 ### With UVX (recommended)
@@ -54,9 +54,9 @@ cookiecutter path/to/rooflow-cookiecutter
 pip install uv
 
 # Create a new project from this template
-uvx cookiecutter gh:hheydaroff/rooflow-cookiecutter
+uvx cookiecutter gh:Opensourceful/WolfFlow-Cookiecutter
 # or from local template
-uvx cookiecutter path/to/rooflow-cookiecutter
+uvx cookiecutter path/to/Wolfflow-cookiecutter
 ```
 
 ## Configuration Options
@@ -65,9 +65,9 @@ When you run the template, you'll be prompted for these values:
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `project_name` | Your project name | "My RooFlow Project" |
+| `project_name` | Your project name | "My WolfFlow Project" |
 | `project_slug` | URL-friendly name | Auto-generated from project_name |
-| `project_description` | A short description | "A project using RooFlow for persistent context and optimized AI-assisted development" |
+| `project_description` | A short description | "A project using WolfFlow for persistent context and optimized AI-assisted development" |
 | `author_name` | Your name | "Your Name" |
 | `author_email` | Your email address | "your.email@example.com" |
 | `license` | Choose a license | MIT, Apache-2.0, GPL-3.0, BSD-3-Clause |
@@ -81,11 +81,11 @@ When you run the template, you'll be prompted for these values:
 The generated project will have this structure:
 
 ```
-my-rooflow-project/
-├── .roo/                  # System prompt files for different modes
-├── .rooignore             # Files to ignore in context
-├── .roomodes              # Mode configuration
-├── roo_config/            # Configuration files
+my-Wolfflow-project/
+├── .Wolf/                  # System prompt files for different modes
+├── .Wolfignore             # Files to ignore in context
+├── .Wolfmodes              # Mode configuration
+├── Wolf_config/            # Configuration files
 │   ├── insert-variables.cmd  # Windows script to set environment variables
 │   ├── insert-variables.sh   # Unix script to set environment variables
 │   └── default-mode/      # Default mode configuration (if enabled)
@@ -103,7 +103,7 @@ my-rooflow-project/
 If you select UVX integration, these additional files will be created:
 
 ```
-my-rooflow-project/
+my-Wolfflow-project/
 ├── .uv/                   # UVX configuration directory
 │   └── uv.toml            # UVX configuration file
 ├── uv-setup.cmd           # Windows UVX setup script
@@ -117,8 +117,8 @@ After generating the project:
 
 1. Navigate to your new project directory
 2. Run the appropriate script to set up your environment:
-   - Windows: `roo_config/insert-variables.cmd`
-   - Unix/Mac: `roo_config/insert-variables.sh`
+   - Windows: `Wolf_config/insert-variables.cmd`
+   - Unix/Mac: `Wolf_config/insert-variables.sh`
 
 This will configure the system prompts with your local environment details.
 
@@ -132,7 +132,7 @@ This will create a virtual environment and install any dependencies listed in `r
 
 ## Default Mode Configuration
 
-If you selected to include default mode configuration, your project will include a `roo_config/default-mode` directory with:
+If you selected to include default mode configuration, your project will include a `Wolf_config/default-mode` directory with:
 
 - `cline_custom_modes.json`: Configuration for custom AI assistant modes
 - `custom-instructions.yaml`: Custom instructions for the AI assistant
@@ -153,20 +153,9 @@ To use the memory bank:
 
 You can customize the generated project by:
 
-1. Editing the system prompt files in `.roo/`
-2. Modifying the `.rooignore` file to control what files are included in context
-3. Updating the `.roomodes` file to add or remove modes
-4. Customizing the default mode configuration in `roo_config/default-mode/`
+1. Editing the system prompt files in `.Wolf/`
+2. Modifying the `.Wolfignore` file to control what files are included in context
+3. Updating the `.Wolfmodes` file to add or remove modes
+4. Customizing the default mode configuration in `Wolf_config/default-mode/`
 5. Adding project-specific information to the memory bank
 
-## Contributing
-
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
-
-## Reporting Issues
-
-If you encounter any problems or have suggestions for improvements, please open an issue on the [GitHub repository](https://github.com/hheydaroff/rooflow-cookiecutter/issues).
-
-## License
-
-This cookiecutter template is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

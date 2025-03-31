@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "RooFlow Environment Setup Script (Unix/Mac)"
+echo "wolfFlow Environment Setup Script (Unix/Mac)"
 echo "=========================================="
 echo
 
@@ -23,9 +23,9 @@ HOME=$(echo "$HOME")  # Use existing $HOME, but quote it
 WORKSPACE=$(pwd)
 
 # --- Construct Paths ---
-GLOBAL_SETTINGS="$HOME/.vscode-server/data/User/globalStorage/rooveterinaryinc.roo-cline/settings/cline_custom_modes.json"
-MCP_LOCATION="$HOME/.local/share/Roo-Code/MCP"
-MCP_SETTINGS="$HOME/.vscode-server/data/User/globalStorage/rooveterinaryinc.roo-cline/settings/cline_mcp_settings.json"
+GLOBAL_SETTINGS="$HOME/.vscode-server/data/User/globalStorage/seawolf.wolf-flow/settings/cline_custom_modes.json"
+MCP_LOCATION="$HOME/.local/share/wolf-Code/MCP"
+MCP_SETTINGS="$HOME/.vscode-server/data/User/globalStorage/wseawolf.wolf-flow/settings/cline_mcp_settings.json"
 
 echo "Detected Environment:"
 echo "- OS: $OS"
@@ -35,12 +35,12 @@ echo "- Workspace Directory: $WORKSPACE"
 echo
 
 # --- Directory Setup ---
-ROO_DIR="$WORKSPACE/.roo"
+wolf_DIR="$WORKSPACE/.wolf"
 
-# Create .roo directory if it doesn't exist
-if [ ! -d "$ROO_DIR" ]; then
-    mkdir -p "$ROO_DIR"
-    echo "Created .roo directory"
+# Create .wolf directory if it doesn't exist
+if [ ! -d "$wolf_DIR" ]; then
+    mkdir -p "$wolf_DIR"
+    echo "Created .wolf directory"
 fi
 
 # --- Function to escape strings for sed ---
@@ -48,16 +48,16 @@ escape_for_sed() {
     echo "$1" | sed 's/[\/&]/\\&/g'
 }
 
-# Check if roo_config/.roo directory exists with system prompt files
-if [ -d "roo_config/.roo" ] && [ "$(ls -A roo_config/.roo 2>/dev/null)" ]; then
-    echo "Found system prompt files in roo_config/.roo"
+# Check if wolf_config/.wolf directory exists with system prompt files
+if [ -d "wolf_config/.wolf" ] && [ "$(ls -A wolf_config/.wolf 2>/dev/null)" ]; then
+    echo "Found system prompt files in wolf_config/.wolf"
     
-    # Copy files from roo_config/.roo to .roo
-    cp -r roo_config/.roo/* "$ROO_DIR/"
-    echo "Copied system prompt files to $ROO_DIR"
+    # Copy files from wolf_config/.wolf to .wolf
+    cp -r wolf_config/.wolf/* "$wolf_DIR/"
+    echo "Copied system prompt files to $wolf_DIR"
     
     # --- Perform Replacements using sed ---
-    find "$ROO_DIR" -type f -name "system-prompt-*" -print0 | while IFS= read -r -d $'\0' file; do
+    find "$wolf_DIR" -type f -name "system-prompt-*" -print0 | while IFS= read -r -d $'\0' file; do
         echo "Processing: $file"
         
         # Basic variables - using sed with escaped strings
@@ -74,7 +74,7 @@ if [ -d "roo_config/.roo" ] && [ "$(ls -A roo_config/.roo 2>/dev/null)" ]; then
         echo "Completed: $file"
     done
 else
-    echo "No system prompt files found in roo_config/.roo"
+    echo "No system prompt files found in wolf_config/.wolf"
     
     # Check if default-system-prompt.md exists
     if [ -f "default-system-prompt.md" ]; then
@@ -82,7 +82,7 @@ else
         
         # Create system prompt files for each mode
         for mode in code architect ask debug test; do
-            output_file="$ROO_DIR/system-prompt-$mode"
+            output_file="$wolf_DIR/system-prompt-$mode"
             
             sed -e "s/OS_PLACEHOLDER/$(escape_for_sed "$OS")/g" \
                 -e "s/SHELL_PLACEHOLDER/$(escape_for_sed "$SHELL")/g" \
@@ -102,5 +102,5 @@ fi
 
 echo
 echo "Setup complete!"
-echo "You can now use RooFlow with your local environment settings."
+echo "You can now use wolfFlow with your local environment settings."
 echo
